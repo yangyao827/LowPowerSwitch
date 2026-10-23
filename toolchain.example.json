@@ -1,0 +1,5 @@
+{
+  "zig": ".toolchain/zig/zig.exe",
+  "linker": ".toolchain/llvm/ld.lld.exe",
+  "sdk": ".toolchain/sdks/iPhoneOS10.3.sdk"
+}

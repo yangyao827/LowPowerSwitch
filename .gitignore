@@ -1,0 +1,9 @@
+build/
+__pycache__/
+.toolchain/
+dist/*
+!dist/local.lowpowercc_0.1.3_iphoneos-arm.deb
+*.log
+*.partial
+.env
+.env.*
