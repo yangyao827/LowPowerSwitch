@@ -2,7 +2,7 @@
 
 在 iOS 10.3.3 控制中心顶部加入低电量模式开关，直接点击开启或关闭，无需进入设置。
 
-当前版本 **0.1.3**，已在越狱 **iPhone 6 Plus / iOS 10.3.3 / ARM64** 上安装并确认功能和外观正常。
+当前版本 **0.1.4**，在 0.1.3 的基础上将电池图标整体缩小 15%，按钮大小和颜色逻辑保持一致。已在越狱 **iPhone 6 Plus / iOS 10.3.3 / ARM64** 上安装，用户已确认调整后的尺寸和外观满意。
 
 ## 功能
 
@@ -14,10 +14,10 @@
 
 ## 安装
 
-下载 [0.1.3 安装包](dist/local.lowpowercc_0.1.3_iphoneos-arm.deb)，复制到手机后通过 Filza 安装，或使用 root SSH：
+下载 [0.1.4 安装包](dist/local.lowpowercc_0.1.4_iphoneos-arm.deb)，复制到手机后通过 Filza 安装，或使用 root SSH：
 
 ```sh
-dpkg -i /手机上的路径/local.lowpowercc_0.1.3_iphoneos-arm.deb
+dpkg -i /手机上的路径/local.lowpowercc_0.1.4_iphoneos-arm.deb
 killall SpringBoard
 ```
 
@@ -58,7 +58,7 @@ python tools/deploy.py
 
 自动化部署支持 `IPHONE_HOST`、`IPHONE_PORT`、`IPHONE_PASSWORD` 环境变量；这些值不写入源码或安装包。Python 依赖通常由 `requirements.txt` 安装；如使用独立依赖目录，可通过 `IOS_SSH_PYTHON` 指定。
 
-DEB 生成到 `dist/`。仓库保留的是实机确认使用的 0.1.3 安装包；重新部署同版本会更新本地安装包文件。
+DEB 生成到 `dist/`，同时保留 0.1.3 安装包供回退；重新部署同版本会更新本地安装包文件。
 
 ## 文件
 

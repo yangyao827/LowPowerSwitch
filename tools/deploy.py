@@ -86,7 +86,7 @@ def main():
         }
         control = b'''Package: local.lowpowercc
 Name: Low Power Mode for Control Center (iOS 10.3)
-Version: 0.1.3
+Version: 0.1.4
 Architecture: iphoneos-arm
 Depends: mobilesubstrate, firmware (>= 10.3), firmware (<< 10.4)
 Description: Native Low Power Mode toggle in the top Control Center row, with a battery glyph and six buttons per page.
@@ -97,7 +97,7 @@ Section: Tweaks
         package = ar([('debian-binary', b'2.0\n'),
                       ('control.tar.gz', archive({'control': (control, 0o644)})),
                       ('data.tar.gz', archive(entries))])
-        output = ROOT / 'dist/local.lowpowercc_0.1.3_iphoneos-arm.deb'
+        output = ROOT / 'dist/local.lowpowercc_0.1.4_iphoneos-arm.deb'
         output.parent.mkdir(exist_ok=True)
         output.write_bytes(package)
         print('Package:', output, 'SHA256:', hashlib.sha256(package).hexdigest(), flush=True)

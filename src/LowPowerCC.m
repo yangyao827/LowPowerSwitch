@@ -31,6 +31,13 @@ static NSString *StatusOff(id self, SEL cmd) { return @"低电量模式：关闭
     UIColor *ink = active ? [UIColor whiteColor] : [UIColor blackColor];
     [ink setStroke];
     [ink setFill];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    CGFloat centerX = CGRectGetMidX(self.bounds);
+    CGFloat centerY = CGRectGetMidY(self.bounds);
+    CGContextTranslateCTM(context, centerX, centerY);
+    CGContextScaleCTM(context, 0.85, 0.85);
+    CGContextTranslateCTM(context, -centerX, -centerY);
     CGFloat width = MIN(26, MIN(self.bounds.size.width, self.bounds.size.height) * 0.52);
     CGFloat height = width * 0.53;
     CGFloat x = CGRectGetMidX(self.bounds) - (width + 3.5) / 2;
@@ -40,6 +47,7 @@ static NSString *StatusOff(id self, SEL cmd) { return @"低电量模式：关闭
     [outline stroke];
     [[UIBezierPath bezierPathWithRoundedRect:CGRectMake(x + width + 2.4, y + height * 0.30, 1.9, height * 0.4) cornerRadius:0.9] fill];
     [[UIBezierPath bezierPathWithRoundedRect:CGRectMake(x + 2.6, y + 2.6, 4.2, height - 5.2) cornerRadius:0.7] fill];
+    CGContextRestoreGState(context);
 }
 @end
 
